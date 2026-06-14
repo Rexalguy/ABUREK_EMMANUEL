@@ -40,9 +40,9 @@ def compute_total(subtotal: float, location: str, coupon: str = None) -> dict:
     # Only coupon discounts apply
     total_discount = coupon_discount if coupon_valid else 0.0
 
-    # cap total discount to 50%
-    if total_discount > 50:
-        total_discount = 50.0
+    # cap total discount to 25%
+    if total_discount > 25:
+        total_discount = 25.0
 
     discount_total = subtotal * (1.0 - (total_discount / 100.0))
     tax_rate = get_tax_rate(location)
@@ -50,7 +50,6 @@ def compute_total(subtotal: float, location: str, coupon: str = None) -> dict:
 
     return {
         'subtotal': subtotal,
-        'tier_discount': 0.0,
         'coupon_discount': coupon_discount if coupon_valid else 0.0,
         'coupon_valid': coupon_valid,
         'total_discount_percent': total_discount,

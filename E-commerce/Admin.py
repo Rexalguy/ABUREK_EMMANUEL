@@ -19,7 +19,7 @@ def admin_menu():
                 print(f' - {code}: {pct}%')
         elif choice == '3':
             print('\nDiscount policy:')
-            print(' - No tier/subtotal discounts apply. Discounts come from coupons only.')
+            print(' - Discounts come from coupons only.')
             print(' - Available coupons are shown in option 2.')
         elif choice == '4':
             print('Logging out from admin.')

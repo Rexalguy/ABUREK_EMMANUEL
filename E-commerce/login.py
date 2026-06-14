@@ -11,8 +11,12 @@ USERS = {
 def login_prompt():
     print('Welcome to the E-commerce platform. Type "exit" to quit.')
     while True:
+
+        #Maximum of 3 login attempts before lockout
         attempts = 0
-        while attempts < 3:
+        max_attempts = 3
+
+        while attempts < max_attempts:
             username = input('Username: ').strip()
             if username.lower() == 'exit':
                 return None
@@ -23,7 +27,7 @@ def login_prompt():
                 return {'username': username, 'role': user['role']}
             else:
                 attempts += 1
-                remaining = 3 - attempts
+                remaining = max_attempts - attempts
                 print(f'Invalid credentials. Attempts remaining: {remaining}')
         # after 3 failed attempts
         print('Too many failed attempts. Login portal locked for 60 seconds.')

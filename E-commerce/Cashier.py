@@ -10,7 +10,7 @@ def cashier_menu():
         choice = input('Choose an option: ').strip()
         if choice == '1':
             print('\nDiscount policy:')
-            print(' - No tier/subtotal discounts apply. Discounts come from coupons only.')
+            print(' - Discounts come from coupons only.')
             print(' - Available coupons are shown in option 2.')
         elif choice == '2':
             print('\nAvailable coupons:')
